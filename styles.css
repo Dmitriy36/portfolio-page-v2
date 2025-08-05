@@ -48,7 +48,6 @@
 * {
   margin: 0;
   padding: 0;
-  border: 1px solid red;
 }
 
 audio,
@@ -71,11 +70,10 @@ body {
 header,
 main,
 footer {
-  max-width: 400px;
+  max-width: 30rem; /*375px;*/
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  border: 1px red;
 }
 
 header {
@@ -83,23 +81,21 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border: 1px red;
 }
 
 nav {
   display: flex;
   align-items: center;
   gap: 1rem;
-  border: 1px red;
 }
 
 nav i {
   font-size: 1.3rem;
 }
 
-.fixed-ukr-link {
+/* .fixed-ukr-link {
   position: fixed;
-}
+} */
 
 main,
 section {
@@ -182,6 +178,15 @@ section {
 }
 
 @media (min-width: 640px) {
+  header,
+  main,
+  footer {
+    max-width: 35rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
   .project-card {
     flex-direction: row;
   }
