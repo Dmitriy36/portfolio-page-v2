@@ -12,6 +12,8 @@
 * {
   margin: 0;
   padding: 0;
+  border: 1px solid red;
+  box-sizing: border-box;
 }
 
 audio,
@@ -162,7 +164,7 @@ section {
   header,
   main,
   footer {
-    max-width: 35rem;
+    max-width: 75rem;
     width: 100%;
     margin: 0 auto;
     padding: 2rem;
