@@ -88,6 +88,10 @@ nav i {
   font-size: 1.3rem;
 }
 
+.fixed-ukr-link {
+  position: fixed;
+}
+
 main,
 section {
   display: flex;
