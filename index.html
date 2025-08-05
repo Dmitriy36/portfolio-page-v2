@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <title>Ignatius Reilly Portfolio</title>
-    <!-- <link rel="stylesheet" href="fanta.css"/> -->
+    <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -14,6 +14,9 @@
     <header>
         <a href="/">Iggy R.</a>
         <nav>
+            <div>
+                <button id="theme-switcher" onclick="SwitchTheme()" class="fixed">Dark Mode</button>
+            </div>
             <a href="https://github.com/Dmitriy36" target="_blank" class="fa-brands fa-github"></a>
             <a href="https://www.linkedin.com/in/dmitriy-yermakov-242aa31a8/" target="_blank" class="fa-brands fa-linkedin"></a>            
             <a href="https://war.ukraine.ua/support-ukraine/" target="_blank" class="fixed-ukr-link"><img src="ukrFlag.png"></a>
@@ -22,17 +25,16 @@
     <main>
         <section>
             <div class="intro-header">
-                <h1>Hi, I'm Dmitriy 🤟</h1>
+                <h1>Hi, I'm Dmitriy 🤟 a.k.a. Ignatius Reilly a.k.a. Iggy a.k.a. "The Iggster" a.k.a. Iggbot</h1>
                 <p>Application Developer</p>
             </div>
-            <div>
-                <button id="theme-switcher" onclick="SwitchTheme()" class="fixed">Dark Mode</button>
-            </div>
+
                     <h5 class="intro-description">
-                        A gourmand extraordinaire by birth, a database and application developer by trade. 
+                        <p>A gourmand extraordinaire by birth, an application developer by trade. 
                         Based in Charlotte, a comfortable metropolis which
-                        has a certain apathy and stagnation which I find inoffensive.
-                        I like fishing, woodworking and making PC games. For work, I fix databases and front ends.
+                        has a certain apathy and stagnation which I find inoffensive.</p>
+                        <p>For work, I fix databases, for hobbies fish, woodwork and make PC games.</p>
+                        <p>..................Links: certs, resume, credly.</p>
                     </h5>
                     <div class="links-container">
                         <i class="fa-solid link-arrow fa-arrow-right"></i> 
@@ -200,30 +202,7 @@
     <footer>
         <p>By <a href="/">Iggy R.</a> ⭐the repo on <a href="https://github.com/Dmitriy36" target="_blank">gitHub</a></p>
     </footer>
-    <script> /* important for this to be AFTER all the content has already loaded */
-
-        function SwitchTheme(){
-            let darkMode = localStorage.getItem('darkMode');   
-            darkMode !== "active" ? EnableDarkMode() : DisableDarkMode()
-        }
-
-        function EnableDarkMode(){
-            const btnTheme = document.getElementById('theme-switcher');
-            // document.body.classList.remove('lightmode');
-            document.body.classList.add('darkmode');
-            localStorage.setItem('darkMode', 'active'); // local storage can only store strings
-            btnTheme.innerHTML = 'Light Mode';
-        }
-
-        function DisableDarkMode(){
-            const btnTheme = document.getElementById('theme-switcher');
-            document.body.classList.remove('darkmode');
-            // document.body.classList.add('lightmode');
-            localStorage.setItem('darkMode', null);
-            btnTheme.innerHTML = 'Dark Mode';
-        }
-
-   </script>
+    
 </body>
 </html>
 
