@@ -12,7 +12,7 @@
 * {
   margin: 0;
   padding: 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   box-sizing: border-box;
 }
 
@@ -62,18 +62,22 @@ nav i {
   font-size: 1.3rem;
 }
 
+td,
+th {
+  background-color: white;
+  border: 1px solid black;
+}
+
 .darkmode {
   --base-color: rgb(0, 0, 0);
   --base-variant: #070808;
   --text-color: rgb(255, 255, 255);
   --secondary-text: rgb(129, 158, 253);
-  td {
+  td,
+  th {
     background-color: black;
+    border: 1px solid white;
   }
-
-  /* th {
-    background-color: black;
-  } */
 
   .project-card img {
     border: 1px solid white;
