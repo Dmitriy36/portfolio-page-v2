@@ -2,7 +2,7 @@
 :root {
   --base-color: rgb(240, 239, 239);
   --base-variant: #e8e9ed;
-  --text-color: black;
+  --text-color: rgb(0, 0, 0);
   --secondary-text: grey;
   --color-link: #2563eb;
   --accent-color: orange;
@@ -11,9 +11,11 @@
 }
 
 .darkmode {
+  --primary-color: rgb(255, 255, 255);
   --base-color: rgb(0, 0, 0);
   --base-variant: #070808;
   --text-color: rgb(255, 255, 255);
+  --sun-color: yellow;
   --secondary-text: rgb(129, 158, 253);
   td,
   th {
@@ -154,8 +156,37 @@ nav li:first-child {
 /* ---------------- asdf ----------------- */
 
 #theme-switcher {
-  width: 100%;
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-color);
+  justify-content: center;
+  align-items: center;
+}
+
+.darkmode #theme-switcher svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switcher svg:last-child {
   display: block;
+  color: var(--sun-color);
+  stroke: blue;
+}
+
+#theme-switcher svg {
+  fill: var(--primary-color);
+}
+.darkmode #theme-switcher svg {
+  fill: var(--sun-color);
+  stroke-width: 2;
+  stroke: blue;
+}
+
+#theme-switcher svg:last-child {
+  display: none;
 }
 
 .tables {
@@ -189,8 +220,19 @@ section {
   gap: 1rem;
 }
 
-.intro-header p {
-  padding-top: 0.25rem;
+.mePic {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.introWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.intro-header {
+  margin-top: 2%;
 }
 
 .intro-description {
