@@ -227,9 +227,10 @@ section {
 }
 
 .mePic {
-  width: 100px;
+  width: 10rem;
   height: auto;
   border-radius: 50%;
+  outline: 1px solid black;
 }
 
 .introWrapper {
@@ -237,8 +238,13 @@ section {
   flex-direction: row;
 }
 
+.intro-pic-holder {
+  margin: 0.5rem;
+}
+
 .intro-header {
   margin-top: 2%;
+  margin: 0.5rem;
 }
 
 .intro-description {
