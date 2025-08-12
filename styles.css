@@ -1,5 +1,6 @@
+/*****************************    COLORS    *****************************/
 :root {
-  --base-color: white;
+  --base-color: rgb(240, 239, 239);
   --base-variant: #e8e9ed;
   --text-color: black;
   --secondary-text: grey;
@@ -7,6 +8,22 @@
   --accent-color: orange;
 
   --border-radius-small: 0.5rem;
+}
+
+.darkmode {
+  --base-color: rgb(0, 0, 0);
+  --base-variant: #070808;
+  --text-color: rgb(255, 255, 255);
+  --secondary-text: rgb(129, 158, 253);
+  td,
+  th {
+    background-color: black;
+    border: 1px solid white;
+  }
+
+  .project-card img {
+    border: 1px solid white;
+  }
 }
 
 * {
@@ -52,36 +69,110 @@ header {
   gap: 1rem;
 }
 
-nav {
+/* ---------- NavBar --------------- */
+
+.immovableBar {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-nav i {
-  font-size: 1.3rem;
+nav {
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* box-shadow is to give it some depth */
+  /* position: fixed; */
+  /* top: 0;*/
+  width: 95%;
+  /* z-index: 1000; */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none; /*to not show bullets in list */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li {
+  height: 50px;
+}
+
+nav a {
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+nav a:hover {
+  /* control how it looks upon hover */
+  background-color: #f0f0f0;
+}
+
+nav li:first-child {
+  /* to control first child's behavior */
+  margin-right: auto;
+}
+
+.sidebar {
+  position: fixed; /* stays in same position even during scrolling */
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999; /* to make sure this is always on top of everything else */
+  background-color: rgba(255, 255, 255, 0.164);
+  backdrop-filter: blur(
+    3px
+  ); /* the glass effect (remember to make background transparent) */
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar li {
+  width: 100%;
+}
+
+.sidebar a {
+  width: 100%;
+}
+
+.menu-button {
+  display: none;
+}
+
+/* ---------------- asdf ----------------- */
+
+#theme-switcher {
+  width: 100%;
+  display: block;
+}
+
+.tables {
+  table-layout: auto;
+  width: fit-content;
+  display: table;
 }
 
 td,
 th {
-  background-color: white;
+  text-align: center;
+  /* background-color: white; */
   border: 1px solid black;
 }
 
-.darkmode {
-  --base-color: rgb(0, 0, 0);
-  --base-variant: #070808;
-  --text-color: rgb(255, 255, 255);
-  --secondary-text: rgb(129, 158, 253);
-  td,
-  th {
-    background-color: black;
-    border: 1px solid white;
-  }
-
-  .project-card img {
-    border: 1px solid white;
-  }
+tbody tr:nth-child(even) {
+  background-color: rgb(226, 224, 224);
 }
 
 main,
@@ -164,6 +255,7 @@ section {
   font-size: 0.8rem;
 }
 
+/*****************************    MEDIA QUERIES    *****************************/
 @media (min-width: 640px) {
   header,
   main,
@@ -180,5 +272,25 @@ section {
 
   .project-card .img-div {
     max-width: 30%;
+  }
+}
+
+@media (max-width: 800px) {
+  /* ok for tablets */
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  /* ok for mobile */
+  .sidebar {
+    width: 100%;
+  }
+  .menu-button {
+    display: flex;
   }
 }
