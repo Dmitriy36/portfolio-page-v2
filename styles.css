@@ -53,6 +53,7 @@ body {
   flex-direction: column;
   background-color: var(--base-color);
   color: var(--text-color);
+  font-family: "Intel One Mono", monospace;
 }
 
 header,
@@ -146,7 +147,10 @@ nav li:first-child {
 }
 
 .sidebar a {
+  font-size: 1.2rem;
+  font-weight: bold;
   width: 100%;
+  color: var(--text-color);
 }
 
 .menu-button {
@@ -197,7 +201,9 @@ nav li:first-child {
 
 td,
 th {
-  text-align: center;
+  text-align: left;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   /* background-color: white; */
   border: 1px solid black;
 }
