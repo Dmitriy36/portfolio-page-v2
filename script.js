@@ -15,3 +15,13 @@ function DisableDarkMode() {
   document.body.classList.remove("darkmode");
   // localStorage.setItem("darkMode", null);
 }
+
+function showSidebar() {
+  const sideBar = document.querySelector(".sidebar");
+  sideBar.style.display = "flex";
+}
+
+function hideSidebar() {
+  const sideBar = document.querySelector(".sidebar");
+  sideBar.style.display = "none";
+}
