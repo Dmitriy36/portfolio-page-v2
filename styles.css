@@ -160,17 +160,23 @@ nav li:first-child {
 /* ---------------- asdf ----------------- */
 
 #theme-switcher {
+  all: unset;
   margin: 5px;
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   padding: 0;
   border-radius: 50%;
   background-color: var(--base-color);
   justify-content: center;
   align-items: center;
+  outline: 0 !important;
 }
 
-.darkmode #theme-switcher svg:first-child {
+#theme-image {
+  outline: 0 !important;
+}
+
+/* .darkmode #theme-switcher svg:first-child {
   display: none;
 }
 
@@ -191,7 +197,7 @@ nav li:first-child {
 
 #theme-switcher svg:last-child {
   display: none;
-}
+} */
 
 .tables {
   table-layout: auto;
