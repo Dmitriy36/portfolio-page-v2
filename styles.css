@@ -83,10 +83,12 @@ header {
 }
 
 nav {
-  background-color: rgba(188, 244, 253, 0.5);
+  background-color: rgba(188, 244, 253, 0.4);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* box-shadow is to give it some depth */
   width: 100%;
   overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 nav ul {
@@ -112,6 +114,11 @@ nav a {
 
 #ukrLi a {
   padding: 0;
+}
+
+#ukrFlag {
+  width: 50px;
+  height: auto;
 }
 
 #ukrLi a:hover {
@@ -335,4 +342,18 @@ section {
       display: block;
     }
   }
+}
+
+/* -------------- glowing --------------- */
+.glowing-container {
+  background-color: transparent; /* Dark background for better glow visibility */
+  box-shadow: 0 0 50px 20px rgba(0, 255, 255, 0.7); /* X, Y, blur, spread, color with opacity */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.glowing-image {
+  filter: drop-shadow(
+    0 0 5px rgba(255, 255, 255, 0.9)
+  ); /* X, Y, blur, color with opacity */
 }

@@ -22,12 +22,10 @@ function DisableDarkMode() {
 
 function showSidebar() {
   const sideBar = document.querySelector(".sidebar");
-  const topBar = document.querySelector(".topBar");
-  sideBar.style.display = "flex";
+  sideBar.style.display = "block";
 }
 
 function hideSidebar() {
   const sideBar = document.querySelector(".sidebar");
-  const topBar = document.querySelector(".topBar");
   sideBar.style.display = "none";
 }
