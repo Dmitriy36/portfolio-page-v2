@@ -83,14 +83,10 @@ header {
 }
 
 nav {
-  background-color: white;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* box-shadow is to give it some depth */
-  /* position: fixed; */
-  /* top: 0;*/
-  width: 95%;
-  /* z-index: 1000; */
+  background-color: rgba(188, 244, 253, 0.5);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* box-shadow is to give it some depth */
+  width: 100%;
   overflow: hidden;
-  border-radius: 10px;
 }
 
 nav ul {
@@ -112,6 +108,14 @@ nav a {
   display: flex;
   align-items: center;
   color: black;
+}
+
+#ukrLi a {
+  padding: 0;
+}
+
+#ukrLi a:hover {
+  background-color: transparent;
 }
 
 nav a:hover {
@@ -153,51 +157,28 @@ nav li:first-child {
   color: var(--text-color);
 }
 
-.menu-button {
-  display: none;
-}
-
 /* ---------------- asdf ----------------- */
 
-#theme-switcher {
+.separate-icons {
   all: unset;
+
   margin: 5px;
-  height: 45px;
   width: 45px;
+  height: auto;
   padding: 0;
   border-radius: 50%;
-  background-color: var(--base-color);
+  background-color: transparent;
   justify-content: center;
   align-items: center;
-  outline: 0 !important;
+  /* outline: 1px solid red; */
 }
 
-#theme-image {
-  outline: 0 !important;
+.separate-icons#menuBurger {
+  /* outline: 1px solid red; */
+  width: 52px;
+  height: auto;
+  margin-top: 0;
 }
-
-/* .darkmode #theme-switcher svg:first-child {
-  display: none;
-}
-
-.darkmode #theme-switcher svg:last-child {
-  display: block;
-  color: var(--sun-color);
-  stroke: blue;
-}
-
-#theme-switcher svg {
-  fill: var(--primary-color);
-}
-.darkmode #theme-switcher svg {
-  fill: var(--sun-color);
-  stroke-width: 2;
-  stroke: blue;
-}
-
-#theme-switcher svg:last-child {
-  display: none;
-} */
 
 .tables {
   table-layout: auto;
@@ -210,7 +191,6 @@ th {
   text-align: left;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  /* background-color: white; */
   border: 1px solid black;
 }
 
@@ -340,7 +320,8 @@ section {
   .hideOnMobile {
     display: none;
   }
-  .menu-button {
+
+  #hamburger {
     display: block;
   }
 }
@@ -349,8 +330,9 @@ section {
   /* ok for mobile */
   .sidebar {
     width: 100%;
-  }
-  .menu-button {
-    display: flex;
+
+    #hamburger {
+      display: block;
+    }
   }
 }

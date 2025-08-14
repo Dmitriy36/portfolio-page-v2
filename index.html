@@ -12,44 +12,35 @@
 </head>
 <body>
  <div class="immovableBar">
-        <a href="https://war.ukraine.ua/support-ukraine/" target="_blank"><img src="ukrFlag.png"></a>
+        <!-- <a href="https://war.ukraine.ua/support-ukraine/" target="_blank"><img src="ukrFlag.png"></a> -->
     <nav>
       <ul class="sidebar">
-        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="var(--text-color)"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
         <li><a href="https://github.com/Dmitriy36" target="_blank">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/dmitriy-yermakov-242aa31a8/" target="_blank">LinkedIn</a></li>
         <li><a href="https://www.credly.com/users/dmitriy-yermakov" target="_blank">Certifications</a></li>
         <li><a href="#">Resume</a></li>
         <li><a href="mailto:igreilly5969@gmail.com">Email</a></li>
       </ul>
-      <ul>        
-        <li>            
-           <a href="https://www.linkedin.com/in/dmitriy-yermakov-242aa31a8/" target="_blank">Dmitriy Yermakov</a>   
-                
-        </li>        
+      <ul>          
+        <li id="ukrLi"><a href="https://war.ukraine.ua/support-ukraine/" target="_blank"><img src="ukrFlag.png"></a></li>
         <li class="hideOnMobile"><a href="https://github.com/Dmitriy36" target="_blank">GitHub</a></li>
         <li class="hideOnMobile"><a href="https://www.linkedin.com/in/dmitriy-yermakov-242aa31a8/" target="_blank">LinkedIn</a></li>
         <li class="hideOnMobile"><a href="https://www.credly.com/users/dmitriy-yermakov"  target="_blank">Certifications</a></li>
         <li class="hideOnMobile"><a href="#">Resume</a></li>
         <li class="hideOnMobile"><a href="mailto:igreilly5969@gmail.com">Email</a></li>
-        <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
-        </li>
+        <li><button class="separate-icons" id="theme-switcher" onclick="SwitchTheme()"><img src="images/moon.png" id="theme-image"/></button></li>
+        <li><button class="separate-icons" id="menuBurger" onclick="showSidebar()"><img src="images/menu.png"/></button></li>
       </ul>
-    </nav>    
-    <button id="theme-switcher" onclick="SwitchTheme()">
-        <img src="images/sun.png" id="theme-image"/> 
-   </button>
-</div>
-    
+    </nav>        
+</div>   
 
     <header>
-
     </header>               
-    <main>                      
-       
+
+    <main>                            
         <section>
-            <div class="introWrapper">
-                
+            <div class="introWrapper">                
 
                 <div class="intro-pic-holder"><img class="mePic" src="images/meSmall.png" alt="Iggy"></div>           
                         
