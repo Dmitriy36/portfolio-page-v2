@@ -79,17 +79,17 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 999;
 }
 
 nav {
   background-color: rgba(188, 244, 253, 0.4);
-  backdrop-filter: blur(3px);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* box-shadow is to give it some depth */
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-size: 1.2rem;
   font-weight: bold;
+  /* backdrop-filter: blur(3px); */
 }
 
 nav ul {
@@ -137,12 +137,12 @@ nav li:first-child {
 }
 
 .sidebar {
-  position: fixed; /* stays in same position even during scrolling */
+  position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
   width: 250px;
-  z-index: 999; /* to make sure this is always on top of everything else */
+  z-index: 500; /* to make sure this is always on top of everything else */
   background-color: rgba(188, 244, 253, 0.4);
   backdrop-filter: blur(3px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
@@ -150,6 +150,10 @@ nav li:first-child {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+.blurred {
+  backdrop-filter: blur(3px);
 }
 
 .sidebar li {

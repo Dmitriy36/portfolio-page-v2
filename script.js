@@ -1,3 +1,5 @@
+const mainBar = document.querySelector(".immovableBar");
+
 function SwitchTheme() {
   // let darkMode = localStorage.getItem("darkMode");
   document.body.className !== "darkmode" ? EnableDarkMode() : DisableDarkMode();
@@ -22,10 +24,18 @@ function DisableDarkMode() {
 
 function showSidebar() {
   const sideBar = document.querySelector(".sidebar");
+  const mainBar = document.querySelector(".immovableBar");
+
+  mainBar.classList.remove("blurred");
+  sideBar.classList.add("blurred");
   sideBar.style.display = "block";
 }
 
 function hideSidebar() {
   const sideBar = document.querySelector(".sidebar");
+  const mainBar = document.querySelector(".immovableBar");
+
   sideBar.style.display = "none";
+  sideBar.classList.remove("blurred");
+  mainBar.classList.add("blurred");
 }
