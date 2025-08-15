@@ -1,5 +1,3 @@
-const mainBar = document.querySelector(".immovableBar");
-
 function SwitchTheme() {
   // let darkMode = localStorage.getItem("darkMode");
   document.body.className !== "darkmode" ? EnableDarkMode() : DisableDarkMode();
@@ -25,10 +23,15 @@ function DisableDarkMode() {
 function showSidebar() {
   const sideBar = document.querySelector(".sidebar");
   const mainBar = document.querySelector(".immovableBar");
+  const menuButton = document.getElementById("menuBurger");
 
   mainBar.classList.remove("blurred");
   sideBar.classList.add("blurred");
   sideBar.style.display = "block";
+
+  if (sideBar.style.display == "block") {
+    console.log("side menu was just shown.");
+  }
 }
 
 function hideSidebar() {
@@ -36,6 +39,9 @@ function hideSidebar() {
   const mainBar = document.querySelector(".immovableBar");
 
   sideBar.style.display = "none";
+  if (sideBar.style.display == "none") {
+    console.log("side menu was just hidden");
+  }
   sideBar.classList.remove("blurred");
   mainBar.classList.add("blurred");
 }
