@@ -24,10 +24,23 @@ function showSidebar() {
   const sideBar = document.querySelector(".sidebar");
   const mainBar = document.querySelector(".immovableBar");
   const menuButton = document.getElementById("menuBurger");
-
+  let listenerPresent = false;
   mainBar.classList.remove("blurred");
   sideBar.classList.add("blurred");
   sideBar.style.display = "block";
+
+  menuButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  if (listenerPresent !== "true") {
+    listenerPresent = true;
+    document.addEventListener("click", (e) => {
+      if (!sideBar.contains(e.target) && e.target !== menuButton) {
+        hideSidebar();
+      }
+    });
+  }
 
   if (sideBar.style.display == "block") {
     console.log("side menu was just shown.");
