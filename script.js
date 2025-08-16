@@ -1,3 +1,15 @@
+let menuButton = document.getElementById("menuBurger");
+let sideBar = document.querySelector(".sidebar");
+console.log(menuButton);
+document.addEventListener("click", (e) => {
+  if (!sideBar.contains(e.target) && e.target !== menuButton) {
+    hideSidebar();
+  }
+});
+menuButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
 function SwitchTheme() {
   // let darkMode = localStorage.getItem("darkMode");
   document.body.className !== "darkmode" ? EnableDarkMode() : DisableDarkMode();
@@ -29,18 +41,15 @@ function showSidebar() {
   sideBar.classList.add("blurred");
   sideBar.style.display = "block";
 
-  menuButton.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
+  // menuButton.addEventListener("click", (e) => {
+  //   e.stopPropagation();
+  // });
 
-  if (listenerPresent !== "true") {
-    listenerPresent = true;
-    document.addEventListener("click", (e) => {
-      if (!sideBar.contains(e.target) && e.target !== menuButton) {
-        hideSidebar();
-      }
-    });
-  }
+  //   document.addEventListener("click", (e) => {
+  //     if (!sideBar.contains(e.target) && e.target !== menuButton) {
+  //       hideSidebar();
+  //     }
+  //   });
 
   if (sideBar.style.display == "block") {
     console.log("side menu was just shown.");
