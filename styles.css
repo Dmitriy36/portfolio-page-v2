@@ -323,16 +323,16 @@ section {
   .project-card .img-div {
     max-width: 30%;
   }
+
+  #menuBurger {
+    display: none;
+  }
 }
 
 @media (max-width: 800px) {
   /* ok for tablets */
   .hideOnMobile {
     display: none;
-  }
-
-  #hamburger {
-    display: block;
   }
 }
 
@@ -341,7 +341,7 @@ section {
   .sidebar {
     width: 100%;
 
-    #hamburger {
+    #menuBurger {
       display: block;
     }
   }
