@@ -1,14 +1,17 @@
 // setup
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d"); // ctx = context
-canvas.width = window.innerWidth / 4;
-canvas.height = window.innerHeight / 4;
-ctx.fillStyle = "blue";
+const container = document.querySelector("container");
+canvas.width = container.clientWidth;
+canvas.height = container.clientHeight;
+console.log("width = ", container.clientWidth);
+console.log("height = ", container.clientHeight);
+ctx.fillStyle = "red";
 ctx.strokeStyle = "white";
 ctx.lineWidth = 2;
 
-const organismsCount = 2500;
-const organismSize = 1;
+const organismsCount = 200;
+const organismSize = 3;
 
 class Particle {
   constructor(effect) {
