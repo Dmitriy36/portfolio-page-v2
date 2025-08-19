@@ -1,11 +1,11 @@
 // setup
+const container = document.querySelector("container");
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d"); // ctx = context
-const container = document.querySelector("container");
-canvas.width = container.clientWidth;
-canvas.height = container.clientHeight;
-console.log("width = ", container.clientWidth);
-console.log("height = ", container.clientHeight);
+
+canvas.width = container.offsetWidth;
+canvas.height = container.offsetWidth;
+
 ctx.fillStyle = "red";
 ctx.strokeStyle = "white";
 ctx.lineWidth = 2;
