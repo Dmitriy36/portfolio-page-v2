@@ -8,11 +8,18 @@
     <title>Infection Simulator</title>
   </head>
   <body>
-    <div class="controlPanel">
-      <button class="xp-button">button xp style</button>
-    </div>
-    <div class="container">
-      <canvas id="canvas1"></canvas>
+    <div class="wrapper">
+      <div class="controlPanel">
+        <button class="xp-button" onclick="infectOne()">Infect One</button>
+      </div>
+      <div class="container">
+        <canvas id="canvas1"></canvas>
+      </div>
+      <div class="reportPanel">
+        <button class="xp-button" onclick="logInfected()">Log Infected</button>
+        <button class="xp-button" onclick="logHealthy()">Log Healthy</button>
+        <div><h2 id="reportInfected"></h2></div>
+      </div>
     </div>
     <script src="canvas.js" defer></script>
   </body>
