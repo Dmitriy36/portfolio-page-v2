@@ -10,15 +10,40 @@
   <body>
     <div class="wrapper">
       <div class="controlPanel">
-        <button class="xp-button" onclick="infectOne()">Infect One</button>
+        <div class="move-to-top">
+          <button style="color: red" onclick="infectOne()">Infect One</button>
+          <div>
+            <label style="display: inline-block"
+              >↑ Infect a random organism ↑</label
+            >
+          </div>
+
+          <div class="reportPanel" style="display: inline-block">
+            <div>
+              <label>Population: </label><label id="populationValue"></label>
+            </div>
+            <div><label>Healthy: </label><label id="healthyValue"></label></div>
+            <div>
+              <label>Infected: </label><label id="infectedValue"></label>
+            </div>
+            <div>
+              <label>Percentage: </label><label id="percentValue"></label>
+            </div>
+          </div>
+        </div>
+
+        <button style="color: green" onclick="cureOne()">Cure 1</button>
+        <button style="color: green" onclick="cureFive()">Cure 5</button>
+        <button style="color: green" onclick="cureTen()">Cure 10</button>
+        <button
+          style="color: green; text-decoration: underline"
+          onclick="cureAll()"
+        >
+          Cure All
+        </button>
       </div>
       <div class="container">
         <canvas id="canvas1"></canvas>
-      </div>
-      <div class="reportPanel">
-        <button class="xp-button" onclick="logInfected()">Log Infected</button>
-        <button class="xp-button" onclick="logHealthy()">Log Healthy</button>
-        <div><h2 id="reportInfected"></h2></div>
       </div>
     </div>
     <script src="canvas.js" defer></script>

@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+button {
+  font-weight: bold;
+  overflow: hidden;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  width: 100%;
 }
 
 body {
@@ -22,40 +32,49 @@ body {
 
 .container {
   display: block;
-  width: 800px;
-  height: 800px;
+  width: 75vw;
+  height: 90vh;
 
   outline: 1px solid red;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin: 1rem;
 }
 
 .controlPanel {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 200px;
-  height: 100%;
+  align-items: center;
+  width: 20vw;
+  height: 90vh;
 
   min-height: 35rem;
   margin: 1rem;
   outline: 1px solid blue;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .reportPanel {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 200px;
-  height: 100%;
+  width: 15vw;
+  height: 15vh;
 
-  min-height: 35rem;
   margin: 1rem;
-  outline: 1px solid blue;
+  outline: 1px solid green;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .wrapper {
   display: flex;
+  align-items: center;
+}
+
+.move-to-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: auto;
 }
