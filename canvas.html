@@ -4,21 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="canvas.css" />
-
     <title>Infection Simulator</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
-      <div class="controlPanel">
-        <div class="move-to-top">
-          <button style="color: red" onclick="infectOne()">Infect One</button>
-          <div>
-            <label style="display: inline-block"
-              >↑ Infect a random organism ↑</label
-            >
+      <div class="side-panel">
+        <div class="controls">
+          <div class="panel1">
+            <button onclick="infectOne()">Infect 1</button>
+            <button onclick="infectFive()">Infect 5</button>
+            <button onclick="infectTen()">Infect 10</button>
+            <button onclick="infectFifty()">Infect 50</button>
           </div>
-
-          <div class="reportPanel" style="display: inline-block">
+          <div class="panel2">
+            <button onclick="cureOne()">Cure 1</button>
+            <button onclick="cureFive()">Cure 5</button>
+            <button onclick="cureTen()">Cure 10</button>
+            <button
+              style="color: green; text-decoration: underline"
+              onclick="cureAll()"
+            >
+              Cure All
+            </button>
+          </div>
+        </div>
+        <div class="report">
+          <div class="text-part">
             <div>
               <label>Population: </label><label id="populationValue"></label>
             </div>
@@ -26,24 +38,21 @@
             <div>
               <label>Infected: </label><label id="infectedValue"></label>
             </div>
-            <div>
+            <!-- <div>
               <label>Percentage: </label><label id="percentValue"></label>
+            </div> -->
+          </div>
+          <div class="chart-part">
+            <div id="charts-container">
+              <div class="chart" id="donutChart"></div>
+              <div class="chart" id="pieChart"></div>
             </div>
           </div>
         </div>
-
-        <button style="color: green" onclick="cureOne()">Cure 1</button>
-        <button style="color: green" onclick="cureFive()">Cure 5</button>
-        <button style="color: green" onclick="cureTen()">Cure 10</button>
-        <button
-          style="color: green; text-decoration: underline"
-          onclick="cureAll()"
-        >
-          Cure All
-        </button>
       </div>
-      <div class="container">
+      <div class="canvas-container">
         <canvas id="canvas1"></canvas>
+        <!-- <div id="chart-panel"></div> -->
       </div>
     </div>
     <script src="canvas.js" defer></script>

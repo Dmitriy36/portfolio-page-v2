@@ -1,10 +1,12 @@
-const container = document.querySelector(".container");
+const container = document.querySelector(".canvas-container");
 const canvas = document.getElementById("canvas1");
-// const report1 = document.getElementById("reportInfected");
+
 const populationLabel = document.getElementById("populationValue");
 const healthyLabel = document.getElementById("healthyValue");
 const infectedLabel = document.getElementById("infectedValue");
 const percentLabel = document.getElementById("percentValue");
+
+const chartPanel = document.getElementById("chart-panel");
 
 const context = canvas.getContext("2d");
 
@@ -12,8 +14,8 @@ canvas.width = container.offsetWidth;
 canvas.height = container.offsetWidth;
 
 const organismsCount = 5000;
-const organismSize = 1;
-let infectionRadius = 5;
+const organismSize = 2;
+let infectionRadius = 7;
 const organismColor = "blue";
 const organismColorInfected = "red";
 
@@ -130,16 +132,7 @@ function report() {
   populationLabel.innerHTML = `${allOrganisms.length}`;
   healthyLabel.innerHTML = `${healthyOrganisms.length}`;
   infectedLabel.innerHTML = `${infectedOrganisms.length}`;
-  percentLabel.innerHTML = `${(
-    (infectedOrganisms.length / organismsCount) *
-    100
-  ).toFixed(2)}%`;
-
-  // report1.innerHTML = `
-  // All Organisms: ${allOrganisms.length}
-  // Infected: ${infectedOrganisms.length}
-  // <br/>Healthy: ${healthyOrganisms.length}
-  // <br/> Infection Rate: ${(
+  // percentLabel.innerHTML = `${(
   //   (infectedOrganisms.length / organismsCount) *
   //   100
   // ).toFixed(2)}%`;
@@ -149,6 +142,32 @@ function infectOne() {
   if (healthyOrganisms.length > 1) {
     let randomOrganism = Math.floor(Math.random() * healthyOrganisms.length);
     healthyOrganisms[randomOrganism].infect();
+  }
+}
+
+function infectFive() {
+  if (healthyOrganisms.length > 5) {
+    for (i = 0; i < 5; i++) {
+      let randomOrganism = Math.floor(Math.random() * healthyOrganisms.length);
+      healthyOrganisms[randomOrganism].infect();
+    }
+  }
+}
+
+function infectTen() {
+  if (healthyOrganisms.length > 10) {
+    for (i = 0; i < 10; i++) {
+      let randomOrganism = Math.floor(Math.random() * healthyOrganisms.length);
+      healthyOrganisms[randomOrganism].infect();
+    }
+  }
+}
+function infectFifty() {
+  if (healthyOrganisms.length > 50) {
+    for (i = 0; i < 50; i++) {
+      let randomOrganism = Math.floor(Math.random() * healthyOrganisms.length);
+      healthyOrganisms[randomOrganism].infect();
+    }
   }
 }
 
@@ -192,6 +211,10 @@ function cureAll() {
   report();
 }
 
+function getData() {
+  return infectedOrganisms.length;
+}
+
 function logInfected() {
   console.log(infectedOrganisms);
 }
@@ -207,3 +230,140 @@ function animate() {
 }
 
 animate();
+
+var donutChartDiv = document.getElementById("donutChart");
+var pieChartDiv = document.getElementById("pieChart");
+
+let donutData = [
+  {
+    values: [infectedOrganisms.length, healthyOrganisms.length],
+    labels: ["Infected", "Healthy"],
+    type: "pie",
+    hole: 0.5,
+    marker: { colors: ["red", "#39FF14"] },
+    sort: false,
+    direction: "clockwise",
+  },
+];
+
+let pieData = [
+  {
+    values: [infectedOrganisms.length, healthyOrganisms.length],
+    labels: ["Infected", "Healthy"],
+    type: "pie",
+    marker: { colors: ["red", "#39FF14"] },
+    sort: false,
+    direction: "clockwise",
+  },
+];
+
+let layout = {
+  height: 350,
+  width: 350,
+  margin: {
+    l: 0, // left margin
+    r: 0, // right margin
+    b: 30, // bottom margin
+    t: 0, // top margin
+  },
+  autosize: true,
+  annotations: [
+    {
+      text: `${((infectedOrganisms.length / organismsCount) * 100).toFixed(
+        2
+      )}%`,
+      x: 0.5,
+      y: 0.5,
+      showarrow: false,
+      font: {
+        size: 24,
+        color: "black",
+      },
+    },
+  ],
+  showlegend: false,
+};
+
+let pieLayout = {
+  height: 350,
+  width: 350,
+  margin: {
+    l: 0, // left margin
+    r: 0, // right margin
+    b: 30, // bottom margin
+    t: 0, // top margin
+  },
+  autosize: true,
+  showlegend: false,
+};
+
+var config = { responsive: true };
+
+Plotly.newPlot(donutChartDiv, donutData, layout, config);
+Plotly.newPlot(pieChartDiv, pieData, pieLayout, config);
+
+function updateGraph() {
+  layout = {
+    height: 350,
+    width: 350,
+    margin: {
+      l: 0, // left margin
+      r: 0, // right margin
+      b: 30, // bottom margin
+      t: 0, // top margin
+    },
+    autosize: true,
+    annotations: [
+      {
+        text: `${((infectedOrganisms.length / organismsCount) * 100).toFixed(
+          2
+        )}%`,
+        x: 0.5,
+        y: 0.5,
+        showarrow: false,
+        font: {
+          size: 24,
+          color: "black",
+        },
+      },
+    ],
+    showlegend: false,
+  };
+
+  let pieLayout = {
+    height: 350,
+    width: 350,
+    margin: {
+      l: 0, // left margin
+      r: 0, // right margin
+      b: 30, // bottom margin
+      t: 0, // top margin
+    },
+    autosize: true,
+    showlegend: false,
+  };
+
+  donutData = [
+    {
+      values: [infectedOrganisms.length, healthyOrganisms.length],
+      labels: ["Infected", "Healthy"],
+      type: "pie",
+      hole: 0.5,
+      marker: { colors: ["red", "#39FF14"] },
+    },
+  ];
+
+  pieData = [
+    {
+      values: [infectedOrganisms.length, healthyOrganisms.length],
+      labels: ["Infected", "Healthy"],
+      type: "pie",
+      marker: { colors: ["red", "#39FF14"] },
+    },
+  ];
+
+  Plotly.react(donutChartDiv, donutData, layout, config);
+  Plotly.react(pieChartDiv, pieData, pieLayout, config);
+}
+
+setInterval(updateGraph, 250);
