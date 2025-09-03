@@ -33,6 +33,7 @@
   padding: 0;
   /* border: 1px solid red; */
   box-sizing: border-box;
+  font-size: 1.2rem;
 }
 
 audio,
@@ -87,7 +88,7 @@ nav {
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* box-shadow is to give it some depth */
   width: 100%;
   /* overflow: hidden; */
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   /* backdrop-filter: blur(3px); */
 }
@@ -298,6 +299,7 @@ section {
 
 .tech-list div {
   padding: 0.1rem 0.5rem;
+  padding-top: 0;
   border-radius: var(--border-radius-small);
 }
 

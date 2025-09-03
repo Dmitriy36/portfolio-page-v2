@@ -23,6 +23,7 @@ let allOrganisms = [];
 let infectedOrganisms = [];
 let healthyOrganisms = [];
 let idGenerator = 0;
+let recentlySpreadInfection = false;
 
 class Particle {
   constructor(effect) {
@@ -69,7 +70,6 @@ class Particle {
       infectedOrganisms.push(this);
       let itemToRemove = healthyOrganisms.indexOf(this);
       healthyOrganisms.splice(itemToRemove, 1);
-
       report();
     }
   }
