@@ -44,7 +44,8 @@ video {
 }
 
 img {
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 body {
@@ -324,6 +325,8 @@ section {
 
   .project-card .img-div {
     max-width: 30%;
+    object-fit: cover;
+    outline: 2px solid black;
   }
 
   #menuBurger {
