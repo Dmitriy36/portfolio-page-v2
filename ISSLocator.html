@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <style>
+      #issMap {
+        height: 500px;
+      }
+    </style>
+    <title>ISS Locator</title>
+  </head>
+  <body>
+    <h1>ISS Location</h1>
+    <p>
+      Latitude: <span id="lat"></span>°
+      <br />
+      Longitude: <span id="lon"></span>°
+      <br />
+      Velocity: <span id="vel"></span><br />
+      Altitude: <span id="altitude"></span>
+    </p>
+
+    <div id="issMap"></div>
+    <div id="refreshInfo"></div>
+
+    <script>
+      const ISS_API_URL = "https://api.wheretheiss.at/v1/satellites/25544";
+
+      const mymap = L.map("issMap").setView([0, 0], 7);
+      const marker = L.marker([0, 0]).addTo(mymap);
+      const attribution =
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+      const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+      const tiles = L.tileLayer(tileUrl, { attribution });
+      tiles.addTo(mymap);
+      async function getISS() {
+        const response = await fetch(ISS_API_URL);
+        const data = await response.json();
+        const { latitude, longitude, velocity, altitude } = data;
+
+        // let marker = L.marker([latitude, longitude]).addTo(mymap);
+        marker.setLatLng([latitude, longitude]);
+        mymap.setView(marker.getLatLng(), mymap.getZoom());
+        document.getElementById("lat").textContent = latitude.toFixed(2);
+        document.getElementById("lon").textContent = longitude.toFixed(2);
+        document.getElementById("altitude").textContent =
+          km_to_miles(altitude) + " miles";
+        document.getElementById("vel").textContent =
+          km_to_miles(velocity) + " mph";
+        document.getElementById(
+          "refreshInfo"
+        ).textContent = `refreshing every 2 seconds`;
+        console.log(latitude, longitude);
+
+        marker.bindPopup("<b>Hello</b>").openPopup();
+      }
+
+      function km_to_miles(km) {
+        return (km * 0.6213).toFixed(0);
+      }
+      getISS();
+      setInterval(getISS, 2000);
+    </script>
+  </body>
+</html>
