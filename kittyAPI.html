@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image From API</title>
+  </head>
+  <body>
+    <p>
+      Random cat image, courtesy of
+      <a href="https://thecatapi.com/" target="_blank">this</a> API
+    </p>
+    <button onclick="reload()">Refresh</button><br />
+    <img src="" id="kitty" />
+    <script>
+      const targetElement = document.getElementById("kitty");
+
+      const url = `https://api.thecatapi.com/v1/images/search`;
+      // const API_key =
+      //   "live_Q32fTXWjt1RAXrI3xCcuqvczdPvZ37abXOx6uIC50V50AjoXYrWr4uOj8icgxdIL";
+
+      async function fetchCatPic() {
+        const response = await fetch(url);
+        const data = await response.json();
+        targetElement.src = data[0].url;
+      }
+      fetchCatPic();
+
+      function reload() {
+        window.location.reload();
+      }
+    </script>
+  </body>
+</html>
