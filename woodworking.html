@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      div.gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      div.gallery-item {
+        margin: 5px;
+        border: 1px solid #ccc;
+        width: calc(25% - 20px);
+      }
+
+      div.gallery-item:hover {
+        border: 1px solid #777;
+      }
+
+      div.gallery-item img {
+        width: 100%;
+        height: auto;
+      }
+
+      div.gallery-item div.desc {
+        padding: 15px;
+        text-align: center;
+      }
+
+      @media only screen and (max-width: 768px) {
+        div.gallery-item {
+          width: calc(50% - 20px);
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        div.gallery-item {
+          width: calc(100% - 20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">Learning Woodworking</h2>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/bench_final.jpg"
+          alt="final product"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          Simple and <i>clean</i> project. All you need is some 2x8s and a
+          circular saw.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/bench1.jpg"
+          alt="bench 1"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          Coming along, making sure I got the angles right 📐
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/bench2.jpg"
+          alt="bench 2"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          Once I got the angles and sizes correct, the rest is easy.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/bench3.jpg"
+          alt="bench 3"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          Wood glue is extremely strong: glued properly, if you try to break the
+          glued joint, often another part of the piece will break first. The
+          catch is: wood cannot be wet or painted, or pressure-treated -AND- you
+          cannot glue end-grain.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/bench5.jpg"
+          alt="bench 4"
+          width="600"
+          height="400"
+        />
+        <div class="desc">Checking for any glue squeeze-out or splinters.</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/bench5.jpg"
+          alt="bench 4"
+          width="600"
+          height="400"
+        />
+        <div class="desc">Checking for any glue squeeze-out or splinters.</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/birdhouse.jpg"
+          alt="birdhouse"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          Birdhouse I made following instructions, fussy work. The "tiles" are
+          just a horizontal wood pieces with notches cut in.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/blanket_ladder.jpg"
+          alt="blanket ladder"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          You just need a couple of 1x4s and a saw. Make doubly sure the stain
+          dries completely before using (ask me how I know.)
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/woodenBucket.jpg"
+          alt="birdhouse"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          A fussy project with angle checking, re-calibrating table saw blade
+          angle, glue mess and having to buy digital angle gauge. Do NOT
+          recommend.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/bucket2.jpg"
+          alt="bucket"
+          width="600"
+          height="400"
+        />
+        <div class="desc">Another pic.</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/sawhorse.jpg"
+          alt="sawhorses"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          I enjoy simple, clean projects - you can easily find instructions, I
+          think these saw horses turned out nice. (Don't use pressure-treated
+          wood like I did, not worth inhaling sawdust.)
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/concealmentGun1.jpg"
+          alt="concealment1"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          Gun concealment shelf with secret compartment. A project above my
+          skill level, a lot of angles and bevels measuring, special FOB
+          hardware and lights, but I was proud of the final result.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/concealmentGun2.jpg"
+          alt="concealment2"
+          width="600"
+          height="400"
+        />
+        <div class="desc">Another pic.</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/trellis1.jpg"
+          alt="trellis1"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          A simple, beautiful and clean project. These trellises are easy to
+          make, but you must have a table saw - do not attempt ripping wood with
+          circular saw.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/trellis2.jpg"
+          alt="trellis2"
+          width="600"
+          height="400"
+        />
+        <div class="desc">How the bottom is secured with carriage bolts.</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/trellis3.jpg"
+          alt="trellis3"
+          width="600"
+          height="400"
+        />
+        <div class="desc">Close-up of screws.</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/gardenbed1.jpg"
+          alt="garden bed"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          A simple garden bed: you just need a few fence pickets and a scrap
+          2x4.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../images/woodworking/gardenbed2.jpg"
+          alt="garden bed"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          How it looks - my mistake was making it too shallow. You want it at
+          least 12"-16" deep, or flowers won't be able to stand up straight. So,
+          same build with 2x4 braces, but make it 2-3 pickets deep. And to avoid
+          spending too much $ on soil, just mix it 60/40 with whatever awful
+          clay soil this is.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
