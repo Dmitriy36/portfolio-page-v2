@@ -396,6 +396,12 @@ div.gallery-item img {
   margin-top: 1%;
 }
 
+.emph {
+  color: red;
+  font-size: larger;
+  font-size: small;
+}
+
 div.gallery-item div.desc {
   padding: 5px;
   text-align: center;
