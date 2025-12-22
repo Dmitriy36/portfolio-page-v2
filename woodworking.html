@@ -1,149 +1,125 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      * {
-        box-sizing: border-box;
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-        font-size: 35px;
-      }
-
-      div.gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-
-      div.gallery-item {
-        margin: 5px;
-        border: 3px solid black;
-        width: calc(25% - 20px);
-      }
-
-      div.gallery-item:hover {
-        border: 1px solid #aaff00;
-      }
-
-      div.gallery-item img {
-        width: 100%;
-        height: auto;
-      }
-
-      div.gallery-item div.desc {
-        padding: 15px;
-        text-align: center;
-      }
-
-      @media only screen and (max-width: 768px) {
-        div.gallery-item {
-          width: calc(50% - 20px);
-        }
-      }
-
-      @media only screen and (max-width: 480px) {
-        div.gallery-item {
-          width: calc(100% - 20px);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1 style="text-align: center">Learning Woodworking</h1>
-    <p>(reminder: add thumbnails, organize by projects)</p>
+    <div style="text-align: center">🪵🪚🔨</div>
+
     <div class="gallery">
       <div class="gallery-item">
-        <img
-          src="images/woodworking/bench_final.jpg"
-          alt="final product"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Bench-Final</div>
+        <a href="images/woodworking/bench_final.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_bench_final.jpg"
+            alt="final product"
+          />
+        </a>
         <div class="desc">
-          Simple and <i>clean</i> project. All you need is some 2x8s and a
-          circular saw.
+          Simple and clean project. All you need is some 2x8s and a circular
+          saw.
         </div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/bench1.jpg"
-          alt="bench 1"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Bench-1</div>
+        <a href="images/woodworking/bench1.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_bench1.jpg"
+            alt="bench 1"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
           Coming along, making sure I got the angles right 📐
         </div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/bench2.jpg"
-          alt="bench 2"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Bench-2</div>
+        <a href="images/woodworking/bench2.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_bench2.jpg"
+            alt="bench 2"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
           Once I got the angles and sizes correct, the rest is easy.
         </div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/bench3.jpg"
-          alt="bench 3"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Bench-3</div>
+        <a href="images/woodworking/bench3.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_bench3.jpg"
+            alt="bench 3"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
-          Wood glue is extremely strong: glued properly, if you try to break the
-          glued joint, often another part of the piece will break first. The
-          catch is: wood cannot be wet or painted, or pressure-treated -AND- you
-          cannot glue end-grain.
+          Wood glue is very strong but: wood cannot be wet or painted, or
+          pressure-treated -AND- you cannot glue end-grain.
         </div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/bench5.jpg"
-          alt="bench 4"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Bench-4</div>
+        <a href="images/woodworking/bench4.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_bench4.jpg"
+            alt="bench 4"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">Checking for any glue squeeze-out or splinters.</div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/bench5.jpg"
-          alt="bench 4"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Bench-5</div>
+        <a href="images/woodworking/bench5.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_bench5.jpg"
+            alt="bench 4"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">Checking for any glue squeeze-out or splinters.</div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/birdhouse.jpg"
-          alt="birdhouse"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Birdhouse</div>
+        <a href="images/woodworking/birdhouse.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_birdhouse.jpg"
+            alt="birdhouse"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
-          Birdhouse I made following instructions, fussy work. The "tiles" are
-          just a horizontal wood pieces with notches cut in.
+          Birdhouse: fussy work. The "tiles" are just a horizontal wood pieces
+          with notches cut in.
         </div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/blanket_ladder.jpg"
-          alt="blanket ladder"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Blanket Ladder</div>
+        <a href="images/woodworking/blanket_ladder.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_blanket_ladder.jpg"
+            alt="blanket ladder"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
           You just need a couple of 1x4s and a saw. Make doubly sure the stain
           dries completely before using (ask me how I know.)
@@ -151,50 +127,57 @@
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/woodenBucket.jpg"
-          alt="birdhouse"
-          width="600"
-          height="400"
-        />
-        <div class="desc">
-          A fussy project with angle checking, re-calibrating table saw blade
-          angle, glue mess and having to buy digital angle gauge. Do NOT
-          recommend.
-        </div>
+        <div class="desc-top">Wooden Bucket 1</div>
+        <a href="images/woodworking/woodenBucket.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_woodenBucket.jpg"
+            alt="birdhouse"
+            width="600"
+            height="400"
+          />
+        </a>
+        <div class="desc">Wooden bucket following a YT clip.</div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/bucket2.jpg"
-          alt="bucket"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Wooden Bucket 2</div>
+        <a href="images/woodworking/bucket2.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_bucket2.jpg"
+            alt="bucket"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">Another pic.</div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/sawhorse.jpg"
-          alt="sawhorses"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Saw Horses</div>
+        <a href="images/woodworking/sawhorse.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_sawhorse.jpg"
+            alt="sawhorses"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
-          I enjoy simple, clean projects - you can easily find instructions, I
-          think these saw horses turned out nice. (Don't use pressure-treated
-          wood like I did, not worth inhaling sawdust.)
+          Saw horses. Don't use pressure-treated wood like I did, not worth
+          inhaling sawdust.
         </div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/concealmentGun1.jpg"
-          alt="concealment1"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Concealment Shelf 1</div>
+        <a href="images/woodworking/concealmentGun1.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_concealmentGun1.jpg"
+            alt="concealment1"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
           Gun concealment shelf with secret compartment. A project above my
           skill level, a lot of angles and bevels measuring, special FOB
@@ -203,56 +186,70 @@
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/concealmentGun2.jpg"
-          alt="concealment2"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Concealment Shelf 2</div>
+        <a href="images/woodworking/concealmentGun2.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_concealmentGun2.jpg"
+            alt="concealment2"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">Another pic.</div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/trellis1.jpg"
-          alt="trellis1"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Trellises 1</div>
+        <a href="images/woodworking/trellis1.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_trellis1.jpg"
+            alt="trellis1"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
-          A simple, beautiful and clean project. These trellises are easy to
-          make, but you must have a table saw - do not attempt ripping wood with
-          circular saw.
+          These trellises are easy to make, but you must have a table saw - do
+          not attempt ripping wood with circular saw.
         </div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/trellis2.jpg"
-          alt="trellis2"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Trellises 2</div>
+        <a href="images/woodworking/trellis2.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_trellis2.jpg"
+            alt="trellis2"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">How the bottom is secured with carriage bolts.</div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/trellis3.jpg"
-          alt="trellis3"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Trellises 3</div>
+        <a href="images/woodworking/trellis3.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_trellis3.jpg"
+            alt="trellis3"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">Close-up of screws.</div>
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/gardenbed1.jpg"
-          alt="garden bed"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Garden Bed 1</div>
+        <a href="images/woodworking/gardenbed1.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_gardenbed1.jpg"
+            alt="garden bed"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
           A simple garden bed: you just need a few fence pickets and a scrap
           2x4.
@@ -260,18 +257,20 @@
       </div>
 
       <div class="gallery-item">
-        <img
-          src="images/woodworking/gardenbed2.jpg"
-          alt="garden bed"
-          width="600"
-          height="400"
-        />
+        <div class="desc-top">Garden Bed 2</div>
+        <a href="images/woodworking/gardenbed2.jpg" target="_blank">
+          <img
+            src="images/woodworking/thumbNails/thumb_gardenbed2.jpg"
+            alt="garden bed"
+            width="600"
+            height="400"
+          />
+        </a>
         <div class="desc">
-          How it looks - my mistake was making it too shallow. You want it at
-          least 12"-16" deep, or flowers won't be able to stand up straight. So,
-          same build with 2x4 braces, but make it 2-3 pickets deep. And to avoid
-          spending too much $ on soil, just mix it 60/40 with whatever awful
-          clay soil this is.
+          Too shallow. You want it at least 12"-16" deep, or flowers won't be
+          able to grow up straight. So, make it 2-3 pickets deep. And to avoid
+          overspending $ on soil, just mix it 60/40 with whatever awful clay
+          soil this is.
         </div>
       </div>
     </div>
