@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 35px;
+      }
+
+      div.gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      div.gallery-item {
+        margin: 5px;
+        border: 3px solid black;
+        width: calc(25% - 20px);
+      }
+
+      div.gallery-item:hover {
+        border: 3px solid #aaff00;
+      }
+
+      div.gallery-item img {
+        width: 100%;
+        height: auto;
+      }
+
+      div.gallery-item div.desc {
+        padding: 15px;
+        text-align: center;
+      }
+
+      @media only screen and (max-width: 768px) {
+        div.gallery-item {
+          width: calc(50% - 20px);
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        div.gallery-item {
+          width: calc(100% - 20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Fishing Pics</h1>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img
+          src="images/fishing/cats2.jpg"
+          alt="Quiet night in June (no rain)"
+          width="600"
+          height="400"
+        />
+        <div class="desc">Quiet night in June (no rain)</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="images/fishing/caught_another_turtle.jpg"
+          alt="Caught another one"
+          width="600"
+          height="400"
+        />
+        <div class="desc">Caught another one 😒</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="images/fishing/clean_mistake.jpg"
+          alt="mistake clean indoors"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          Never clean fish indoors: clouds of flies the next day in the kitchen.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="images/fishing/cooked.jpg"
+          alt="m-hm"
+          width="600"
+          height="400"
+        />
+        <div class="desc">Mmm-m.</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="images/fishing/cooked2.jpg"
+          alt="m-hm"
+          width="600"
+          height="400"
+        />
+        <div class="desc">Mmm-mmm.</div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="images/fishing/night_in_june.jpg"
+          alt="m-hm"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          Night in July, you can see the bait in ziploc bag (Jello™ flavored
+          hotdogs), fish don't like them, stick to chicken livers.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="images/fishing/rainy.jpg"
+          alt="m-hm"
+          width="600"
+          height="400"
+        />
+        <div class="desc">
+          Rainy summer night, how much difference rain makes.
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="images/fishing/stomach.jpg"
+          alt="m-hm"
+          width="600"
+          height="400"
+        />
+        <div class="desc">What's inside a catfish stomach?</div>
+      </div>
+    </div>
+  </body>
+</html>
