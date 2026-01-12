@@ -14,8 +14,17 @@ canvas.width = container.offsetWidth;
 canvas.height = container.offsetWidth;
 
 const organismsCount = 5000;
-const organismSize = 2;
-let infectionRadius = 7;
+
+// Scale organism size and infection radius based on canvas width
+// Base values are for a 800px canvas
+const baseCanvasWidth = 800;
+const baseOrganismSize = 2;
+const baseInfectionRadius = 7;
+
+const scaleFactor = canvas.width / baseCanvasWidth;
+const organismSize = Math.max(1, baseOrganismSize * scaleFactor);
+let infectionRadius = Math.max(3, baseInfectionRadius * scaleFactor);
+
 const organismColor = "blue";
 const organismColorInfected = "red";
 

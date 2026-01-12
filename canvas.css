@@ -39,7 +39,12 @@ body {
   gap: 15px;
 }
 
-.panel1,
+.panel1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .panel2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -63,38 +68,6 @@ body {
 }
 
 .controls button:active {
-  border-style: inset;
-  background: #d4d0c0;
-}
-
-.panel1 button {
-  color: #000;
-}
-
-.panel1 button:hover {
-  background: #f5f2e8;
-}
-
-.panel2 button {
-  color: #000;
-}
-
-.panel2 button:hover {
-  background: #f5f2e8;
-}
-
-.panel2 button:last-child {
-  grid-column: 1 / -1;
-  background: #ece9d8;
-  color: #000;
-  font-weight: 600;
-}
-
-.panel2 button:last-child:hover {
-  background: #f5f2e8;
-}
-
-.panel2 button:last-child:active {
   border-style: inset;
   background: #d4d0c0;
 }
@@ -186,12 +159,26 @@ body {
 @media (max-width: 1024px) {
   .wrapper {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto auto;
     height: auto;
+    display: grid;
   }
 
   .side-panel {
     height: auto;
+    order: 1;
+    grid-row: 1;
+  }
+
+  .canvas-container {
+    order: 2;
+    grid-row: 2;
+    min-height: 400px;
+  }
+
+  /* Hide report on mobile, or put it at the bottom */
+  .report {
+    order: 3;
   }
 
   #charts-container {
@@ -204,10 +191,6 @@ body {
     flex: 1;
     min-width: 250px;
     max-width: 300px;
-  }
-
-  .canvas-container {
-    min-height: 400px;
   }
 }
 
@@ -233,8 +216,7 @@ body {
     min-height: 48px; /* Good touch target size */
   }
 
-  .panel1,
-  .panel2 {
+  .panel1 {
     gap: 12px;
   }
 
@@ -280,20 +262,15 @@ body {
     gap: 12px;
   }
 
-  /* Single column layout for very small screens */
-  .panel1,
-  .panel2 {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .panel2 button:last-child {
-    grid-column: 1;
+  /* Keep 2-column layout on small screens - buttons are paired well */
+  .panel1 {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
   .controls button {
-    padding: 12px 14px;
-    font-size: 13px;
+    padding: 12px 10px;
+    font-size: 12px;
     min-height: 44px;
   }
 
