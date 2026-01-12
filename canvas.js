@@ -306,7 +306,7 @@ let pieLayout = {
   showlegend: false,
 };
 
-var config = { responsive: true };
+var config = { responsive: false };
 
 Plotly.newPlot(donutChartDiv, donutData, layout, config);
 Plotly.newPlot(pieChartDiv, pieData, pieLayout, config);
