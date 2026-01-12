@@ -56,7 +56,7 @@ body {
   background-color: var(--base-color);
   color: var(--text-color);
   font-family: "Intel One Mono", monospace;
-  overflow-x: hidden; /* ADD THIS LINE */
+  overflow-x: hidden;
 }
 
 header,
@@ -82,23 +82,21 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 2rem;
+  height: auto;
   z-index: 999;
 }
 
 nav {
   background-color: rgba(188, 244, 253, 0.4);
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* box-shadow is to give it some depth */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   width: 100%;
-  overflow-x: hidden;
   font-size: 1.5rem;
   font-weight: bold;
-  /* backdrop-filter: blur(3px); */
 }
 
 nav ul {
   width: 100%;
-  list-style: none; /*to not show bullets in list */
+  list-style: none;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -131,12 +129,10 @@ nav a {
 }
 
 nav a:hover {
-  /* control how it looks upon hover */
   background-color: #f0f0f0;
 }
 
 nav li:first-child {
-  /* to control first child's behavior */
   margin-right: auto;
 }
 
@@ -146,7 +142,7 @@ nav li:first-child {
   right: 0;
   height: 100vh;
   width: 250px;
-  z-index: 500; /* to make sure this is always on top of everything else */
+  z-index: 500;
   background-color: rgba(253, 188, 228, 0.4);
   backdrop-filter: blur(3px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
@@ -175,7 +171,6 @@ nav li:first-child {
 
 .separate-icons {
   all: unset;
-
   margin: 5px;
   width: 45px;
   height: auto;
@@ -184,11 +179,9 @@ nav li:first-child {
   background-color: transparent;
   justify-content: center;
   align-items: center;
-  /* outline: 1px solid red; */
 }
 
 .separate-icons#menuBurger {
-  /* outline: 1px solid red; */
   width: 52px;
   height: auto;
   margin-top: 0;
@@ -337,7 +330,6 @@ section {
 }
 
 @media (max-width: 800px) {
-  /* ok for tablets */
   .hideOnMobile {
     display: none;
   }
@@ -345,15 +337,20 @@ section {
 
 @media (max-width: 400px) {
   nav a {
-    padding: 0 15px; /* Reduce padding on small screens */
+    padding: 0 10px;
   }
 
   #ukrFlag {
-    width: 50px; /* Slightly smaller flag on mobile */
+    width: 45px;
   }
 
   .separate-icons#menuBurger {
-    width: 40px; /* Slightly smaller burger on mobile */
+    width: 38px;
+  }
+
+  .separate-icons {
+    width: 38px;
+    margin: 3px;
   }
 
   .sidebar {
@@ -367,16 +364,14 @@ section {
 
 /* -------------- glowing --------------- */
 .glowing-container {
-  background-color: transparent; /* Dark background for better glow visibility */
-  box-shadow: 0 0 50px 20px rgba(0, 255, 255, 0.7); /* X, Y, blur, spread, color with opacity */
+  background-color: transparent;
+  box-shadow: 0 0 50px 20px rgba(0, 255, 255, 0.7);
   padding: 20px;
   border-radius: 10px;
 }
 
 .glowing-image {
-  filter: drop-shadow(
-    0 0 5px rgba(255, 255, 255, 0.9)
-  ); /* X, Y, blur, color with opacity */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9));
 }
 
 /* Galleries */
@@ -429,7 +424,7 @@ div.gallery-item div.desc-top {
 
 div.gallery-item a img {
   width: 100%;
-  height: auto; /* Maintains the aspect ratio */
+  height: auto;
 }
 
 @media only screen and (max-width: 768px) {
@@ -455,6 +450,4 @@ div.gallery-item a img {
 
 .grid-box img {
   width: 100%;
-  /* border: 3px solid black;
-  width: calc(25% - 20px); */
 }
