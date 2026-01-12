@@ -13,7 +13,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
   max-width: 1600px;
   margin: 0 auto;
@@ -30,6 +30,18 @@ body {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
+}
+
+.controls {
+  order: 1;
+}
+
+.canvas-container {
+  order: 3;
+}
+
+.report {
+  order: 2;
 }
 
 /* Controls Section */
@@ -144,6 +156,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  order: 3;
 }
 
 #canvas1 {
@@ -155,42 +168,66 @@ body {
   background: #000;
 }
 
+/* Desktop layout - side by side */
+@media (min-width: 1025px) {
+  .wrapper {
+    grid-template-columns: 400px 1fr;
+  }
+
+  .side-panel {
+    height: 100%;
+  }
+
+  .controls {
+    order: 1;
+  }
+
+  .report {
+    order: 2;
+  }
+
+  .canvas-container {
+    order: 1;
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .wrapper {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
     height: auto;
-    display: grid;
   }
 
   .side-panel {
     height: auto;
+  }
+
+  .controls {
     order: 1;
-    grid-row: 1;
   }
 
   .canvas-container {
     order: 2;
-    grid-row: 2;
     min-height: 400px;
   }
 
-  /* Hide report on mobile, or put it at the bottom */
   .report {
     order: 3;
   }
 
+  /* Make charts side-by-side and smaller on mobile */
   #charts-container {
     flex-direction: row;
-    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
   }
 
   .chart {
     flex: 1;
-    min-width: 250px;
-    max-width: 300px;
+    min-width: 150px;
+    max-width: 200px;
   }
 }
 
@@ -222,12 +259,14 @@ body {
 
   /* Stack charts vertically on mobile */
   #charts-container {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 8px;
   }
 
   .chart {
-    width: 100%;
-    max-width: 100%;
+    width: auto;
+    max-width: 180px;
+    flex: 1;
   }
 
   .text-part {
