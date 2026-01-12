@@ -135,6 +135,8 @@ body {
   flex-direction: column;
   gap: 15px;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .chart {
@@ -144,6 +146,9 @@ body {
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Canvas Container */
@@ -172,6 +177,7 @@ body {
 @media (min-width: 1025px) {
   .wrapper {
     grid-template-columns: 400px 1fr;
+    max-width: 1600px;
   }
 
   .side-panel {
@@ -190,6 +196,15 @@ body {
     order: 1;
     grid-column: 2;
     grid-row: 1;
+  }
+
+  /* Larger charts on desktop */
+  .chart {
+    max-width: 350px;
+  }
+
+  #charts-container {
+    flex-direction: column;
   }
 }
 
@@ -222,12 +237,14 @@ body {
     flex-direction: row;
     gap: 10px;
     justify-content: center;
+    width: 100%;
+    padding: 0 10px;
   }
 
   .chart {
-    flex: 1;
-    min-width: 150px;
-    max-width: 200px;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 48%;
   }
 }
 
@@ -261,12 +278,14 @@ body {
   #charts-container {
     flex-direction: row;
     gap: 8px;
+    justify-content: center;
+    width: 100%;
   }
 
   .chart {
     width: auto;
-    max-width: 180px;
-    flex: 1;
+    max-width: 48%;
+    flex: 0 1 auto;
   }
 
   .text-part {
