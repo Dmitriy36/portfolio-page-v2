@@ -56,6 +56,7 @@ body {
   background-color: var(--base-color);
   color: var(--text-color);
   font-family: "Intel One Mono", monospace;
+  overflow-x: hidden; /* ADD THIS LINE */
 }
 
 header,
@@ -89,7 +90,7 @@ nav {
   background-color: rgba(188, 244, 253, 0.4);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* box-shadow is to give it some depth */
   width: 100%;
-  /* overflow: hidden; */
+  overflow-x: hidden;
   font-size: 1.5rem;
   font-weight: bold;
   /* backdrop-filter: blur(3px); */
@@ -343,13 +344,24 @@ section {
 }
 
 @media (max-width: 400px) {
-  /* ok for mobile */
+  nav a {
+    padding: 0 15px; /* Reduce padding on small screens */
+  }
+
+  #ukrFlag {
+    width: 50px; /* Slightly smaller flag on mobile */
+  }
+
+  .separate-icons#menuBurger {
+    width: 40px; /* Slightly smaller burger on mobile */
+  }
+
   .sidebar {
     width: 100%;
+  }
 
-    #menuBurger {
-      display: block;
-    }
+  .sidebar #menuBurger {
+    display: block;
   }
 }
 

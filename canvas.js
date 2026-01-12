@@ -267,12 +267,12 @@ let pieData = [
 ];
 
 let layout = {
-  height: 350,
-  width: 350,
+  height: 200,
+  width: 200,
   margin: {
     l: 0, // left margin
     r: 0, // right margin
-    b: 30, // bottom margin
+    b: 10, // bottom margin
     t: 0, // top margin
   },
   autosize: true,
@@ -285,7 +285,7 @@ let layout = {
       y: 0.5,
       showarrow: false,
       font: {
-        size: 24,
+        size: 15,
         color: "black",
       },
     },
@@ -294,12 +294,12 @@ let layout = {
 };
 
 let pieLayout = {
-  height: 350,
-  width: 350,
+  height: 200,
+  width: 200,
   margin: {
     l: 0, // left margin
     r: 0, // right margin
-    b: 30, // bottom margin
+    b: 10, // bottom margin
     t: 0, // top margin
   },
   autosize: true,
@@ -313,12 +313,12 @@ Plotly.newPlot(pieChartDiv, pieData, pieLayout, config);
 
 function updateGraph() {
   layout = {
-    height: 350,
-    width: 350,
+    height: 200,
+    width: 200,
     margin: {
       l: 0, // left margin
       r: 0, // right margin
-      b: 30, // bottom margin
+      b: 10, // bottom margin
       t: 0, // top margin
     },
     autosize: true,
@@ -331,7 +331,7 @@ function updateGraph() {
         y: 0.5,
         showarrow: false,
         font: {
-          size: 24,
+          size: 15,
           color: "black",
         },
       },
@@ -340,12 +340,12 @@ function updateGraph() {
   };
 
   let pieLayout = {
-    height: 350,
-    width: 350,
+    height: 200,
+    width: 200,
     margin: {
       l: 0, // left margin
       r: 0, // right margin
-      b: 30, // bottom margin
+      b: 10, // bottom margin
       t: 0, // top margin
     },
     autosize: true,
