@@ -109,19 +109,20 @@ nav li {
 
 nav a {
   height: 100%;
-  padding: 0 30px;
+  padding: 0 8px;
   text-decoration: none;
   display: flex;
   align-items: center;
   color: black;
+  font-size: 1.2rem;
 }
 
 #ukrLi a {
-  padding: 0;
+  padding: 0 5px;
 }
 
 #ukrFlag {
-  width: 65px;
+  width: 50px;
   height: auto;
 }
 
@@ -172,20 +173,22 @@ nav li:first-child {
 
 .separate-icons {
   all: unset;
-  margin: 5px;
-  width: 45px;
+  margin: 3px;
+  width: 40px;
   height: auto;
   padding: 0;
   border-radius: 50%;
   background-color: transparent;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 .separate-icons#menuBurger {
-  width: 52px;
+  width: 42px;
   height: auto;
   margin-top: 0;
+  display: flex;
 }
 
 .tables {
@@ -305,7 +308,17 @@ section {
 }
 
 /*****************************    MEDIA QUERIES    *****************************/
+
+/* Desktop only - hide hamburger and show full nav */
 @media (min-width: 801px) {
+  .hideOnMobile {
+    display: flex !important;
+  }
+
+  #menuBurger {
+    display: none !important;
+  }
+
   header,
   main,
   footer {
@@ -325,45 +338,61 @@ section {
     outline: 2px solid black;
   }
 
-  #menuBurger {
-    display: none;
+  nav a {
+    padding: 0 20px;
   }
 }
 
+/* Mobile and Tablet - show hamburger, hide full nav */
 @media (max-width: 800px) {
   .hideOnMobile {
-    display: none;
+    display: none !important;
+  }
+
+  #menuBurger {
+    display: flex !important;
   }
 
   nav a {
-    padding: 0 15px;
-  }
-}
-
-@media (max-width: 400px) {
-  nav a {
-    padding: 0 10px;
+    padding: 0 6px;
+    font-size: 1rem;
   }
 
   #ukrFlag {
-    width: 45px;
+    width: 40px;
+  }
+
+  .separate-icons {
+    width: 36px;
+    margin: 2px;
   }
 
   .separate-icons#menuBurger {
     width: 38px;
   }
+}
 
-  .separate-icons {
-    width: 38px;
-    margin: 3px;
-  }
-
+/* Extra small screens */
+@media (max-width: 400px) {
   .sidebar {
     width: 100%;
   }
 
-  .sidebar #menuBurger {
-    display: block;
+  nav a {
+    padding: 0 4px;
+    font-size: 0.9rem;
+  }
+
+  #ukrFlag {
+    width: 35px;
+  }
+
+  .separate-icons {
+    width: 32px;
+  }
+
+  .separate-icons#menuBurger {
+    width: 34px;
   }
 }
 
