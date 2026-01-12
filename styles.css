@@ -349,26 +349,32 @@ section {
     display: none !important;
   }
 
-  #menuBurger {
+  /* Hide the entire navigation list on mobile */
+  nav > ul:not(.sidebar) {
+    display: none !important;
+  }
+
+  /* Show only the hamburger menu button and theme switcher */
+  #menuBurger,
+  #theme-switcher {
     display: flex !important;
+    position: fixed;
+    top: 10px;
+    z-index: 1000;
   }
 
-  nav a {
-    padding: 0 6px;
-    font-size: 1rem;
+  #menuBurger {
+    right: 10px;
   }
 
-  #ukrFlag {
-    width: 40px;
+  #theme-switcher {
+    right: 70px;
   }
 
-  .separate-icons {
-    width: 36px;
-    margin: 2px;
-  }
-
-  .separate-icons#menuBurger {
-    width: 38px;
+  .separate-icons#menuBurger,
+  .separate-icons#theme-switcher {
+    width: 50px;
+    height: 50px;
   }
 }
 
