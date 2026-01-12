@@ -305,7 +305,7 @@ section {
 }
 
 /*****************************    MEDIA QUERIES    *****************************/
-@media (min-width: 640px) {
+@media (min-width: 801px) {
   header,
   main,
   footer {
@@ -333,6 +333,10 @@ section {
 @media (max-width: 800px) {
   .hideOnMobile {
     display: none;
+  }
+
+  nav a {
+    padding: 0 15px;
   }
 }
 
