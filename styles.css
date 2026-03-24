@@ -455,6 +455,10 @@ div.gallery-item div.desc {
   font-size: small;
 }
 
+div.gallery-item div.desc a {
+  font-size: inherit;
+}
+
 div.gallery-item div.desc-top {
   padding: 3px;
   text-align: center;
