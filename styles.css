@@ -134,10 +134,6 @@ nav a:hover {
   background-color: #f0f0f0;
 }
 
-nav li:first-child {
-  margin-right: auto;
-}
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -349,7 +345,7 @@ section {
     display: none !important;
   }
 
-  .immovableBar {
+  nav {
     display: none;
   }
 
