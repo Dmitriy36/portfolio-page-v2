@@ -345,6 +345,13 @@ section {
   #ukrLi {
     display: flex;
   }
+  #themeSwitcherDesktop {
+    display: flex;
+  }
+
+  #theme-switcher {
+    display: none !important;
+  }
 }
 
 /* Mobile and Tablet - show hamburger, hide full nav */
@@ -354,7 +361,15 @@ section {
   }
 
   nav {
-    display: none;
+    background: none;
+    box-shadow: none;
+    width: 0;
+    height: 0;
+    overflow: visible;
+  }
+
+  nav > ul:not(.sidebar) {
+    display: none !important;
   }
 
   #ukrFlagFixed {
@@ -390,6 +405,9 @@ section {
   }
 
   #ukrLi {
+    display: none !important;
+  }
+  #themeSwitcherDesktop {
     display: none !important;
   }
 }
