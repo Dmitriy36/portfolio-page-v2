@@ -349,24 +349,40 @@ section {
     display: none !important;
   }
 
-  /* Show only the hamburger menu button and theme switcher */
-  #menuBurger,
-  #theme-switcher {
-    display: flex !important;
+  .immovableBar {
+    display: none;
+  }
+
+  #ukrFlagFixed {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+  }
+
+  #ukrFlag {
+    width: 45px;
+    height: auto;
   }
 
   #menuBurger {
+    display: flex !important;
+    position: fixed;
+    top: 10px;
     right: 10px;
+    z-index: 1000;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
   }
 
   #theme-switcher {
-    right: 70px;
-  }
-
-  .separate-icons#menuBurger,
-  .separate-icons#theme-switcher {
-    width: 50px;
-    height: 50px;
+    display: flex !important;
+    position: fixed;
+    top: 10px;
+    right: 65px;
+    z-index: 1000;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
   }
 }
 
