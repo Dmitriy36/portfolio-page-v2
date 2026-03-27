@@ -349,18 +349,10 @@ section {
     display: none !important;
   }
 
-  /* Hide the entire navigation list on mobile */
-  nav > ul:not(.sidebar) {
-    display: none !important;
-  }
-
   /* Show only the hamburger menu button and theme switcher */
   #menuBurger,
   #theme-switcher {
     display: flex !important;
-    position: fixed;
-    top: 10px;
-    z-index: 1000;
   }
 
   #menuBurger {
