@@ -337,6 +337,14 @@ section {
   nav a {
     padding: 0 20px;
   }
+
+  #ukrFlagFixed {
+    display: none !important;
+  }
+
+  #ukrLi {
+    display: flex;
+  }
 }
 
 /* Mobile and Tablet - show hamburger, hide full nav */
@@ -379,6 +387,10 @@ section {
     right: 65px;
     z-index: 1000;
     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+  }
+
+  #ukrLi {
+    display: none !important;
   }
 }
 
