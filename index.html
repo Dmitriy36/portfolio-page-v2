@@ -111,7 +111,7 @@
                      <div class="project-card">
                     <div>
                         <p>
-                        <h4>How can you make a Starcraft 2 Coop shitlist tracker, to not which players were bad or good?</h4>
+                        <h4>How can you make a Starcraft 2 Coop shitlist tracker, to remember which players were bad or good?</h4>
                         </p>
                         <div class="tech-list">
                             <div class="card-button-secondary">
@@ -123,14 +123,17 @@
 
                         </div>
                         <p class="desc"> Like this: <br> 
-                            Set up a free tier project in Supabase with these columns: id, replay_id, player_name, match-date, map_name, region, notes. <br>
+                            Set up a free tier project in Supabase with these columns: <br>
+                            id, replay_id, player_name, match-date, map_name, region, notes. <br>
                             The key is a Python script which uses sc2reader, a 3rd party library that can parse SC2 replay files to extract names, maps, etc.
-                            Here are the modules I used: os, json, sc2reader, requests (send data via HTTP calls) and datetime.
+                            Here are all the modules I needed:<br> 
+                            os, json, sc2reader, requests (send data via HTTP calls) and datetime.<br>
                             Use the Python script with sc2 reader to get all replays once, then incrementally after re-running the script. <br>
                             Then just format your HTML page so it looks neat.
                             Then next time you play with someone, you know if they stink or not.
                         </p>
-                            <img src="images/supabase1.png" alt="shitlist" />
+                        <div class="img-div"><img src="images/supabase1.png" alt="shitlist" /></div>
+                            
                     </div>
                     <div class="img-div">
                         <img src="images/shitlist1.png" alt="shitlist" />
@@ -273,7 +276,7 @@
                             </div>
 
                         </div>
-                        <p class="desc">There are many To-Do apps, but only one can be the absolute best: <br>mine. <br>Most are bloated with features, infested with greedy ads and none of them do what I want: <br>To add sub-tasks and to be able to rearrange (drag) those sub-tasks and redefine their ordering.<br>
+                        <p class="desc">There are many To-Do apps, but only one can be #1: <br>mine. <br>Most are bloated with features, infested with greedy ads and none of them do what I want: <br>To add sub-tasks and to be able to rearrange (drag) those sub-tasks and redefine their ordering.<br>
                             Behold! Written in Vanilla JS, in my app you can define sub-tasks and drag and rearrange those sub-tasks! You will be prompted for your email on both devices, to sync. No passwords, this uses Google Firebase auth.</p>                            
  
                         <div class="project-links">
