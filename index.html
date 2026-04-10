@@ -111,7 +111,7 @@
                      <div class="project-card">
                         <div>
                         <p>
-                        <h4>How can you make a Starcraft 2 Coop shitlist tracker, to remember which players were bad or good?</h4>
+                        <h4>How to make a Starcraft 2 Coop shitlist tracker, to remember which players were good and which stunk?</h4>
                         </p>
                         <div class="tech-list">
                             <div class="card-button-secondary">
@@ -122,15 +122,11 @@
                             </div>
 
                         </div>
-                        <p class="desc"> Like this: <br> 
+                        <p class="desc"> Like this! <br> 
                             Set up a free tier project in Supabase with these columns: <br>
                             id, replay_id, player_name, match-date, map_name, region, notes. <br>
-                            The key is a Python script which uses sc2reader, a 3rd party library that can parse SC2 replay files to extract names, maps, etc.
-                            Here are all the modules I needed:<br> 
-                            os, json, sc2reader, requests (send data via HTTP calls) and datetime.<br>
-                            Use the Python script with sc2 reader to get all replays once, then incrementally after re-running the script. <br>
-                            Then just format your HTML page so it looks neat.
-                            Then next time you play with someone, you know if they stink or not.
+                            The key is a Python script which uses sc2reader, a library that can parse SC2 replay files.<br>
+                            Then use sc2reader to get all replays once, then incrementally after re-running the script. <br>
                         </p>
                          <div class="project-links">
                             <p>Sorry, not posting live because player names are visible.<br></p>
