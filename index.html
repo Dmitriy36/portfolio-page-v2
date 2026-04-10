@@ -111,6 +111,35 @@
                      <div class="project-card">
                     <div>
                         <p>
+                        <h4>How can you make a Starcraft 2 Coop shitlist tracker, to not which players were bad or good?</h4>
+                        </p>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>JavaScript</p>   
+                                <p>Python</p>
+                                <p>Supabase free tier</p>
+
+                            </div>
+
+                        </div>
+                        <p class="desc"> Like this: <br> 
+                            Set up a free tier project in Supabase with these columns: id, replay_id, player_name, match-date, map_name, region, notes. <br>
+                            The key is a Python script which uses sc2reader, a 3rd party library that can parse SC2 replay files to extract names, maps, etc.
+                            Here are the modules I used: os, json, sc2reader, requests (send data via HTTP calls) and datetime.
+                            Use the Python script with sc2 reader to get all replays once, then incrementally after re-running the script. <br>
+                            Then just format your HTML page so it looks neat.
+                            Then next time you play with someone, you know if they stink or not.
+                        </p>
+                            <img src="images/supabase1.png" alt="shitlist" />
+                    </div>
+                    <div class="img-div">
+                        <img src="images/shitlist1.png" alt="shitlist" />
+                    </div>
+                </div>
+
+                     <div class="project-card">
+                    <div>
+                        <p>
                         <h4>How accurately can you pinpoint your city on the globe, without labels?</h4>
                         </p>
                         <div class="tech-list">
