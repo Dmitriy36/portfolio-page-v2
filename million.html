@@ -1,7 +1,7 @@
 <!--
    Note: If you experience lag, try disabling browser extensions. They can significantly impact performance of any project.
 -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -163,7 +163,7 @@
         // Use noise to create a color gradient effect
         const noiseValue = noise(x * 0.0051, y * 0.0051); // Adjust scale for variation
         const colorIndex = Math.floor(
-          ((noiseValue + 1) / 2) * colorArray.length
+          ((noiseValue + 1) / 2) * colorArray.length,
         );
         particleColors[i] = colorArray[colorIndex];
       }
@@ -251,6 +251,9 @@
 
       // Start Animation
       animate();
+    </script>
+    <script>
+      logVisit("million");
     </script>
   </body>
 </html>

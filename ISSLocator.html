@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -59,9 +59,8 @@
           km_to_miles(altitude) + " miles";
         document.getElementById("vel").textContent =
           km_to_miles(velocity) + " mph";
-        document.getElementById(
-          "refreshInfo"
-        ).textContent = `refreshing every 2 seconds`;
+        document.getElementById("refreshInfo").textContent =
+          `refreshing every 2 seconds`;
         console.log(latitude, longitude);
 
         marker.bindPopup("<b>Hello</b>").openPopup();
@@ -72,6 +71,9 @@
       }
       getISS();
       setInterval(getISS, 2000);
+    </script>
+    <script>
+      logVisit("ISSLocator");
     </script>
   </body>
 </html>

@@ -66,3 +66,26 @@ function hideSidebar() {
   sideBar.classList.remove("blurred");
   mainBar.classList.add("blurred");
 }
+
+// Visit tracking
+const SUPABASE_URL = "https://ewztgzyqrgvhgmbaldgn.supabase.co";
+const SUPABASE_KEY = "sb_publishable_7vr3dnvPPCn4JKMUQVrTYw_1DDR0lX9";
+
+async function logVisit(pageName) {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/portfolio_visits`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+      },
+      body: JSON.stringify({
+        page: pageName,
+        visitor_ip: null, // Supabase REST doesn't expose client IP, we'll handle this
+      }),
+    });
+  } catch (err) {
+    console.error("Visit log failed:", err);
+  }
+}
