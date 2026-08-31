@@ -76,6 +76,15 @@ const SUPABASE_KEY = "sb_publishable_7vr3dnvPPCn4JKMUQVrTYw_1DDR0lX9";
 
 async function logVisit(pageName) {
   try {
+    let visitorIP = "unknown";
+    try {
+      const ipResponse = await fetch("https://api.ipify.org?format=json");
+      const ipData = await ipResponse.json();
+      visitorIP = ipData.ip;
+    } catch (e) {
+      console.log("Could not get IP");
+    }
+
     await fetch(`${SUPABASE_URL}/rest/v1/portfolio_visits`, {
       method: "POST",
       headers: {
@@ -85,7 +94,7 @@ async function logVisit(pageName) {
       },
       body: JSON.stringify({
         page: pageName,
-        visitor_ip: null, // Supabase REST doesn't expose client IP, we'll handle this
+        visitor_ip: visitorIP,
       }),
     });
   } catch (err) {
