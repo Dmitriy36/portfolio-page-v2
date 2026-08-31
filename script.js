@@ -1,13 +1,16 @@
 let menuButton = document.getElementById("menuBurger");
 let sideBar = document.querySelector(".sidebar");
-document.addEventListener("click", (e) => {
-  if (!sideBar.contains(e.target) && e.target !== menuButton) {
-    hideSidebar();
-  }
-});
-menuButton.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
+
+if (menuButtn && sideBar) {
+  document.addEventListener("click", (e) => {
+    if (!sideBar.contains(e.target) && e.target !== menuButton) {
+      hideSidebar();
+    }
+  });
+  menuButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+}
 
 function SwitchTheme() {
   // let darkMode = localStorage.getItem("darkMode");
