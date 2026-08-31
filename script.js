@@ -1,7 +1,7 @@
 let menuButton = document.getElementById("menuBurger");
 let sideBar = document.querySelector(".sidebar");
 
-if (menuButtn && sideBar) {
+if (menuButton && sideBar) {
   document.addEventListener("click", (e) => {
     if (!sideBar.contains(e.target) && e.target !== menuButton) {
       hideSidebar();
