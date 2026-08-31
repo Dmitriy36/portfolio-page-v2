@@ -77,12 +77,25 @@ const SUPABASE_KEY = "sb_publishable_7vr3dnvPPCn4JKMUQVrTYw_1DDR0lX9";
 async function logVisit(pageName) {
   try {
     let visitorIP = "unknown";
+    let location = null;
+
     try {
       const ipResponse = await fetch("https://api.ipify.org?format=json");
       const ipData = await ipResponse.json();
       visitorIP = ipData.ip;
     } catch (e) {
       console.log("Could not get IP");
+    }
+
+    try {
+      const geoResponse = await fetch(`https://ipapi.co/${visitorIP}/json/`);
+      const geoData = await geoResponse.json();
+      location =
+        [geoData.city, geoData.region, geoData.country_name]
+          .filter(Boolean)
+          .join(", ") || null;
+    } catch (e) {
+      console.log("Could not get location");
     }
 
     await fetch(`${SUPABASE_URL}/rest/v1/portfolio_visits`, {
@@ -95,6 +108,7 @@ async function logVisit(pageName) {
       body: JSON.stringify({
         page: pageName,
         visitor_ip: visitorIP,
+        location: location,
       }),
     });
   } catch (err) {
