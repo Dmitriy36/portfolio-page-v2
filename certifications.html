@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certifications - Dmitriy Yermakov</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ---- scoped to this page only, so styles.css / other pages are untouched ---- */
+      .cert-intro {
+        max-width: 75rem;
+        margin: 1rem auto 2rem;
+        padding: 0 1rem;
+        line-height: 1.5;
+      }
+
+      .cert-wrap {
+        max-width: 75rem;
+        margin: 0 auto 3rem;
+        padding: 0 1rem;
+      }
+
+      table.cert-table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      .cert-table th,
+      .cert-table td {
+        border: 1px solid black;
+        padding: 0.6rem 0.75rem;
+        text-align: left;
+        vertical-align: middle;
+      }
+
+      .cert-table tbody tr:nth-child(even) {
+        background-color: rgb(226, 224, 224);
+      }
+
+      .cert-table img.badge {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .cert-table a.verify {
+        color: var(--color-link);
+        text-decoration: none;
+      }
+
+      /* ---- Mobile: collapse each row into a labeled card ---- */
+      @media (max-width: 800px) {
+        .cert-table thead {
+          display: none;
+        }
+
+        .cert-table,
+        .cert-table tbody,
+        .cert-table tr,
+        .cert-table td {
+          display: block;
+          width: 100%;
+        }
+
+        .cert-table tr {
+          margin-bottom: 1rem;
+          border: 1px solid black;
+        }
+
+        .cert-table td {
+          border: none;
+          border-bottom: 1px solid #bbb;
+          padding-left: 40%;
+          position: relative;
+        }
+
+        .cert-table td:last-child {
+          border-bottom: none;
+        }
+
+        .cert-table td::before {
+          content: attr(data-label);
+          position: absolute;
+          left: 0.75rem;
+          width: 35%;
+          font-weight: bold;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Certifications</h1>
+
+    <p class="cert-intro">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+
+    <div class="cert-wrap">
+      <table class="cert-table">
+        <thead>
+          <tr>
+            <th>Certification</th>
+            <th>Exam Code</th>
+            <th>Badge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Certification">Placeholder Cert 1</td>
+            <td data-label="Exam Code">XX-000</td>
+            <td data-label="Badge">
+              <a class="verify" href="#" target="_blank" rel="noopener">
+                <img class="badge" src="images/certs/placeholder.png" alt="Placeholder Cert 1 badge" />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Certification">Placeholder Cert 2</td>
+            <td data-label="Exam Code">XX-000</td>
+            <td data-label="Badge">
+              <a class="verify" href="#" target="_blank" rel="noopener">
+                <img class="badge" src="images/certs/placeholder.png" alt="Placeholder Cert 2 badge" />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Certification">Placeholder Cert 3</td>
+            <td data-label="Exam Code">XX-000</td>
+            <td data-label="Badge">
+              <a class="verify" href="#" target="_blank" rel="noopener">
+                <img class="badge" src="images/certs/placeholder.png" alt="Placeholder Cert 3 badge" />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Certification">Placeholder Cert 4</td>
+            <td data-label="Exam Code">XX-000</td>
+            <td data-label="Badge">
+              <a class="verify" href="#" target="_blank" rel="noopener">
+                <img class="badge" src="images/certs/placeholder.png" alt="Placeholder Cert 4 badge" />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Certification">Placeholder Cert 5</td>
+            <td data-label="Exam Code">XX-000</td>
+            <td data-label="Badge">
+              <a class="verify" href="#" target="_blank" rel="noopener">
+                <img class="badge" src="images/certs/placeholder.png" alt="Placeholder Cert 5 badge" />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Certification">Placeholder Cert 6</td>
+            <td data-label="Exam Code">XX-000</td>
+            <td data-label="Badge">
+              <a class="verify" href="#" target="_blank" rel="noopener">
+                <img class="badge" src="images/certs/placeholder.png" alt="Placeholder Cert 6 badge" />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Certification">Placeholder Cert 7</td>
+            <td data-label="Exam Code">XX-000</td>
+            <td data-label="Badge">
+              <a class="verify" href="#" target="_blank" rel="noopener">
+                <img class="badge" src="images/certs/placeholder.png" alt="Placeholder Cert 7 badge" />
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      logVisit("certifications");
+    </script>
+  </body>
+</html>
