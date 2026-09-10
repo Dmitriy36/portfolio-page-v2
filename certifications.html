@@ -8,6 +8,14 @@
     <style>
       /* ---- scoped to this page only, so styles.css / other pages are untouched ---- */
 
+            body {
+        background-color: rgb(200, 200, 200);
+      }
+
+      .cert-table tbody tr:nth-child(even) {
+        background-color: rgb(235, 235, 235);
+      }
+
       .home-btn:hover {
         opacity: 0.85;
       }
@@ -97,9 +105,9 @@
     <p style="text-align: center"><a href="index.html">← Back Home</a></p>
 
     <p class="cert-intro">
-      My certifications, with direct verification links. I moved these off
-      Credly, which now flags some Microsoft and Oracle certs as "unverified."
-      (AWS still requires Credly for verification.)
+          <p class="cert-intro">
+      My certifications, each with a direct verification link - no Credly account required.
+    </p>
     </p>
 
     <div class="cert-wrap">
