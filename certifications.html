@@ -8,6 +8,20 @@
     <style>
       /* ---- scoped to this page only, so styles.css / other pages are untouched ---- */
 
+      .home-btn {
+        display: inline-block;
+        margin: 0 0 1.5rem 1rem;
+        padding: 0.4rem 0.9rem;
+        background-color: var(--color-link);
+        color: #fff;
+        text-decoration: none;
+        border-radius: var(--border-radius-small);
+      }
+
+      .home-btn:hover {
+        opacity: 0.85;
+      }
+
       .cert-intro {
         width: 100%;
         max-width: 90rem;
@@ -90,6 +104,7 @@
   </head>
   <body>
     <h1 style="text-align: center; font-size: 3rem">Certifications</h1>
+    <a class="home-btn" href="index.html">&larr; Back to home</a>
 
     <p class="cert-intro">
       I used to host all my certs on Credly, but after they broke up with
@@ -172,7 +187,7 @@
           </tr>
           <tr>
             <td data-label="Certification">AWS Certified Cloud Practitioner</td>
-            <td data-label="Exam Code">AWS CLF-C0</td>
+            <td data-label="Exam Code">AWS CLF-C02</td>
             <td data-label="Verify">
               <a
                 class="verify"
