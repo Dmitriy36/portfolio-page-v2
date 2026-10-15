@@ -70,48 +70,15 @@ function hideSidebar() {
   mainBar.classList.add("blurred");
 }
 
-// Visit tracking
-const SUPABASE_URL = "https://ewztgzyqrgvhgmbaldgn.supabase.co";
-const SUPABASE_KEY = "sb_publishable_7vr3dnvPPCn4JKMUQVrTYw_1DDR0lX9";
+// Visit tracking - goes through our own server, which holds the database key.
+// The server adds the visitor's IP and location itself.
+const PORTFOLIO_SERVER = "https://portfolio-server-46dy.onrender.com";
 
-async function logVisit(pageName) {
-  try {
-    let visitorIP = "unknown";
-    let location = null;
-
-    try {
-      const ipResponse = await fetch("https://api.ipify.org?format=json");
-      const ipData = await ipResponse.json();
-      visitorIP = ipData.ip;
-    } catch (e) {
-      console.log("Could not get IP");
-    }
-
-    try {
-      const geoResponse = await fetch(`https://ipapi.co/${visitorIP}/json/`);
-      const geoData = await geoResponse.json();
-      location =
-        [geoData.city, geoData.region, geoData.country_name]
-          .filter(Boolean)
-          .join(", ") || null;
-    } catch (e) {
-      console.log("Could not get location");
-    }
-
-    await fetch(`${SUPABASE_URL}/rest/v1/portfolio_visits`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
-      },
-      body: JSON.stringify({
-        page: pageName,
-        visitor_ip: visitorIP,
-        location: location,
-      }),
-    });
-  } catch (err) {
-    console.error("Visit log failed:", err);
-  }
+function logVisit(pageName) {
+  fetch(`${PORTFOLIO_SERVER}/log`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ page: pageName }),
+    keepalive: true, // lets the log finish even if the visitor clicks away
+  }).catch((err) => console.error("Visit log failed:", err));
 }
