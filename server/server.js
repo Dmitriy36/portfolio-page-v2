@@ -49,14 +49,20 @@ function getVisitorIP(req) {
 
 async function lookupLocation(ip) {
   try {
-    const res = await fetch(`https://ipapi.co/${ip}/json/`);
-    if (!res.ok) return null;
+    const res = await fetch(`https://ipapi.co/${ip}/json/`, {
+      headers: { "User-Agent": "portfolio-server/1.0" },
+    });
     const geo = await res.json();
+    if (!res.ok || geo.error) {
+      console.error("Location lookup failed:", res.status, JSON.stringify(geo));
+      return null;
+    }
     return (
       [geo.city, geo.region, geo.country_name].filter(Boolean).join(", ") ||
       null
     );
-  } catch {
+  } catch (err) {
+    console.error("Location lookup error:", err.message);
     return null;
   }
 }
