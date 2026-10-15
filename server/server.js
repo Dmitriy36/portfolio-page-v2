@@ -47,19 +47,28 @@ function getVisitorIP(req) {
   return req.socket.remoteAddress || "unknown";
 }
 
+// ip-api.com: free, no key, 45 lookups per minute. Its free tier only
+// offers http (not https), which is fine here: this call happens server to
+// server, never in the visitor's browser.
 async function lookupLocation(ip) {
   try {
-    const res = await fetch(`https://ipapi.co/${ip}/json/`, {
-      headers: { "User-Agent": "portfolio-server/1.0" },
-    });
-    const geo = await res.json();
-    if (!res.ok || geo.error) {
-      console.error("Location lookup failed:", res.status, JSON.stringify(geo));
+    const res = await fetch(
+      `http://ip-api.com/json/${ip}?fields=status,message,city,regionName,country`,
+    );
+    const text = await res.text();
+    let geo;
+    try {
+      geo = JSON.parse(text);
+    } catch {
+      console.error("Location lookup failed:", res.status, text.slice(0, 200));
+      return null;
+    }
+    if (geo.status !== "success") {
+      console.error("Location lookup failed:", geo.message);
       return null;
     }
     return (
-      [geo.city, geo.region, geo.country_name].filter(Boolean).join(", ") ||
-      null
+      [geo.city, geo.regionName, geo.country].filter(Boolean).join(", ") || null
     );
   } catch (err) {
     console.error("Location lookup error:", err.message);
