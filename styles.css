@@ -356,6 +356,10 @@ section {
   #theme-switcher {
     display: none !important;
   }
+
+  .mobileOnly {
+    display: none;
+  }
 }
 
 /* Mobile and Tablet - show hamburger, hide full nav */
