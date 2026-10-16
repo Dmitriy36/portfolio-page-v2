@@ -414,6 +414,17 @@ section {
   #themeSwitcherDesktop {
     display: none !important;
   }
+
+  /* Open menu: start the links below the flag and icons */
+  .sidebar {
+    padding-top: 70px;
+  }
+
+  /* Skills table: hide the Certs column so the table fits the screen */
+  .tables th:nth-child(3),
+  .tables td:nth-child(3) {
+    display: none;
+  }
 }
 
 /* Extra small screens */
@@ -437,6 +448,12 @@ section {
 
   .separate-icons#menuBurger {
     width: 34px;
+  }
+
+  /* Skills table: smaller text so it fits the smallest phones */
+  .tables th,
+  .tables td {
+    font-size: 0.8rem;
   }
 }
 
